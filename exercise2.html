@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Largest Cities Array</title>
+    <style>
+        body {
+            background-color: #ffc0cb; /* Soft pink background */
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            border: 2px solid #ff69b4; /* Pink border */
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px;
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2, h3 {
+            color: #ff1493; /* Deep pink headings */
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 5px;
+            border-bottom: 1px solid #ffb6c1;
+        }
+    </style>
+</head>
+<body>
+    <h2>Largest Cities</h2>
+
+    <div class="container" id="initial-cities"></div>
+    <div class="container" id="sorted-cities"></div>
+    <div class="container" id="final-cities"></div>
+
+    <script>
+        let cities = ["Tokyo", "Mexico City", "New York City", "Mumbai", "Seoul", "Shanghai", "Lagos", "Buenos Aires", "Cairo", "London"];
+
+        // Initial cities
+        document.getElementById('initial-cities').innerHTML = `<h3>Initial Cities</h3><p>${cities.join(", ")}</p>`;
+
+        // Sort and display
+        cities.sort();
+        let sortedList = "<h3>Sorted Cities</h3><ul>";
+        for(let i = 0; i < cities.length; i++) {
+            sortedList += `<li>${cities[i]}</li>`;
+        }
+        sortedList += "</ul>";
+        document.getElementById('sorted-cities').innerHTML = sortedList;
+
+        // Add more cities and display final list
+        cities.push("Los Angeles", "Calcutta", "Osaka", "Beijing");
+        cities.sort();
+        let finalList = "<h3>Final Sorted Cities</h3><ul>";
+        for(let i = 0; i < cities.length; i++) {
+            finalList += `<li>${cities[i]}</li>`;
+        }
+        finalList += "</ul>";
+        document.getElementById('final-cities').innerHTML = finalList;
+    </script>
+</body>
+</html>
